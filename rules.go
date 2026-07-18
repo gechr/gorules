@@ -2,8 +2,6 @@
 // repos via a `.ruleguard/rules.go` loader that calls dsl.ImportRules.
 package gorules
 
-//go:generate go run gen/clog.go
-
 import "github.com/quasilyte/go-ruleguard/dsl"
 
 // Bundle exposes every rule in this package for import via dsl.ImportRules.

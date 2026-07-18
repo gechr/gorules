@@ -8,7 +8,7 @@ GO_LDFLAGS   ?= -s -w -X main.version=$(VERSION)
 DIST_DIR     ?= dist
 
 .PHONY: all
-all: fmt lint test
+all: gen fmt lint test
 
 .PHONY: fmt
 fmt:
@@ -21,6 +21,10 @@ fmt:
 .PHONY: build
 build:
 	@$(GO) build -ldflags "$(GO_LDFLAGS)" -o $(DIST_DIR)/prl .
+
+.PHONY: gen
+gen:
+	@$(GO) generate ./...
 
 .PHONY: install
 install:
